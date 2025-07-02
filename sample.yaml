@@ -1,0 +1,48 @@
+# CI Configuration File for Sony Projects
+# Place this file in your project root directory
+# File name should be: ci-config.yaml or ci-config.yml
+
+# Required: Specify your project language
+# Supported values: java-maven, java-gradle, python
+project_language: "java-maven"  # Change this to your project type
+
+# Optional: Control which stages to run (default: all stages run)
+# Set to false to skip a stage
+runUnitTests: true    # Set to false to skip unit tests
+runLintTests: true    # Set to false to skip lint/code quality tests
+
+# Optional: Specify testing tools (defaults will be used if not specified)
+tool_for_unit_testing:
+  java: "junit"       # For Java: junit, testng
+  # python: "pytest"  # For Python: pytest, unittest
+
+tool_for_lint_testing:
+  java: "checkstyle"  # For Java: checkstyle, spotbugs, pmd
+  # python: "pylint"  # For Python: pylint, flake8, black
+
+# Examples for different project types:
+
+# For Java Maven project:
+# project_language: "java-maven"
+# tool_for_unit_testing:
+#   java: "junit"
+# tool_for_lint_testing:
+#   java: "checkstyle"
+
+# For Java Gradle project:
+# project_language: "java-gradle"
+# tool_for_unit_testing:
+#   java: "junit"
+# tool_for_lint_testing:
+#   java: "spotbugs"
+
+# For Python project:
+# project_language: "python"
+# tool_for_unit_testing:
+#   python: "pytest"
+# tool_for_lint_testing:
+#   python: "pylint"
+
+# To skip stages:
+# runUnitTests: false  # This will skip the unit test stage
+# runLintTests: false  # This will skip the lint test stage
